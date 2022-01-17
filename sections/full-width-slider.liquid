@@ -1,0 +1,46 @@
+<div class="owl-carousel full-slider">
+    <div class="item">
+        <div class="slider-image">
+            <figure>
+                <img src="{{ 'slider-1.png' | asset_url }}" alt="The Soap Store">
+            </figure>
+        </div>
+    </div>
+    <div class="item">
+        <div class="slider-image">
+            <figure>
+                <img src="{{ 'slider-2.png' | asset_url }}" alt="The Soap Store">
+            </figure>
+        </div>
+    </div>
+    <div class="item">
+        <div class="slider-image">
+            <figure>
+                <img src="{{ 'slider-3.png' | asset_url }}" alt="The Soap Store">
+            </figure>
+        </div>
+    </div>
+    <div class="item">
+        <div class="slider-image">
+            <figure>
+                <img src="{{ 'slider-4.png' | asset_url }}" alt="The Soap Store">
+            </figure>
+        </div>
+    </div>
+</div>
+
+
+<script>
+ $(".full-slider").owlCarousel({
+    animateOut: 'fadeOut',
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    items: 1,
+    loop: true,
+    margin: 10,
+    nav: false,
+    responsiveClass: true,
+});
+</script>
+   

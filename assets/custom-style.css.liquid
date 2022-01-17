@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1140px
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+figure,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* HEADER CSS  */
+
+header.navbar {
+    padding: 15px 0;
+    background: #343a40;
+}
+
+header.navbar a {
+    font-size: 16px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 0 8px;
+}
+
+header.navbar a:hover {
+    color: #DDD;
+}
+
+
+/* BANNER SECTION  */
+
+.banner-content {
+    background-image: url(../assets/banner.jpg);
+    background-size: cover;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-content figure img {
+    width: 100%;
+}
+
+.banner-content .caption {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.banner-content .caption h1 {
+    line-height: 1;
+    margin: 0;
+}
+
+.banner-content .caption h2 {
+    color: #717070;
+    font-size: 24px;
+    font-weight: 450;
+    line-height: 1.8;
+}
+
+.button {
+    background: #005eb8;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 15px;
+    text-align: center;
+    width: 260px !important;
+    text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
