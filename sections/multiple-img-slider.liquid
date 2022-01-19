@@ -1,0 +1,106 @@
+<!--TOP CATEGORIES-->
+<section class="multi-img-wrapper">
+    <div class="container">
+        <!--Title-->
+        <div class="row">
+            <div class="col-8">
+                <div class="title-header">
+                    <h2>Top categories&nbsp;&#47;&nbsp;<span>Find top products</span></h2>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="see-all">
+                    <a href="#">
+                        <button>See all</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--Content-->
+        <div class="row">
+            <div class="col">
+                <div class="multi-img-slider">
+                    <div class="owl-carousel owl-theme owl-type2">
+                        <div class="item">
+                            <a href="abc">
+                                <figure>
+                                    <img src="{{ 'kids.jpeg' | asset_url }}" alt="pic">
+                                    <span>
+                                        <h3>Kids</h3>
+                                    </span>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                    <img src="{{ 'mens.jpeg' | asset_url}}" alt="pic">
+                                    <span>
+                                        <h3>Mens</h3>
+                                    </span>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                    <img src="{{ 'women.jpeg' | asset_url }}" alt="pic">
+                                    <span>
+                                        <h3>Womens</h3>
+                                    </span>
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                    <img src="{{ 'gifts.jpeg' | asset_url }}" alt="pic">
+                                    <span>
+                                        <h3>Gifts</h3>
+                                    </span>
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                    <img src="{{ 'gifts.jpeg' | asset_url }}" alt="pic">
+                                    <span>
+                                        <h3>Home Appliances</h3>
+                                    </span>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $('.owl-type2').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplaySpeed: 2000,
+        stopOnHover: true,
+        nav: true,
+        dots:false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    })
+</script>

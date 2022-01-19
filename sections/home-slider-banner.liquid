@@ -1,0 +1,86 @@
+<section class="home-banner">
+    <div class="container">
+        <div class="row">
+            <!--Slider-->
+            <div class="col-8">
+                <div class="banner-slider">
+                    <div class="owl-carousel owl-theme owl-type1">
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                    <img src="{{ 'slider_1.jpg' | asset_url }}" alt="The Soap Store"  alt="pic">
+                                    <span>
+                                        <h3>Online Shopping</h3>
+                                        <p>Buy what you see.<see></see></p>
+                                    </span>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                   <img src="{{ 'slider_2.jpeg' | asset_url }}" alt="The Soap Store"  alt="pic">
+                                    <span>
+                                        <h3>Anytime anywhere just few clicks away.</h3>
+                                        <p>Buy what you see.<see></see></p>
+                                    </span>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                        <img src="{{ 'slider_3.jpeg' | asset_url }}" alt="The Soap Store"  alt="pic">
+                                    <span>
+                                        <h3>Online Clothing Store</h3>
+                                        <p>Buy what you see.<see></see></p>
+                                    </span>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Banner new products-->
+            <div class="col-4">
+                <div class="banner-new-product">
+                    <a href="#">
+                        <figure>
+                            <img src="{{ 'new_product.jpg' | asset_url }}" alt="pic">
+                            <span>
+                            <h3>New products!</h3>
+                            <p>Hot and new<see></see></p>
+                        </span>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script >
+    $('.owl-type1').owlCarousel({
+        loop: true,
+        margin: 8,
+        autoplay: true,
+         autoplayTimeout: 5000,
+        autoplaySpeed: 2000,
+        nav: true,
+        dots:false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    })
+</script>
