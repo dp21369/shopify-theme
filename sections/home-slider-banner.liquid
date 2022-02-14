@@ -5,54 +5,33 @@
             <div class="col-8">
                 <div class="banner-slider">
                     <div class="owl-carousel owl-theme banner-slider-content">
-                        <div class="item">
+                    {%for block  in section.blocks %}
+                    <div class="item">
                             <a href="#">
                                 <figure>
-                                    <img src="{{ 'slider_1.jpg' | asset_url }}" alt="The Soap Store"  alt="pic">
+                                    <img src="{{block.settings.image-picker | img_url: 'master'}}" alt="The Soap Store"  alt="pic">
                                     <span>
-                                        <h3>Online Shopping</h3>
-                                        <p>Buy what you see.<see></see></p>
+                                        <h3>{{block.settings.lt-header}}</h3>
+                                        <p>{{block.settings.sm-text}}</p>
                                     </span>
                                 </figure>
                             </a>
                         </div>
+                    {%endfor%}
 
-                        <div class="item">
-                            <a href="#">
-                                <figure>
-                                   <img src="{{ 'slider_2.jpeg' | asset_url }}" alt="The Soap Store"  alt="pic">
-                                    <span>
-                                        <h3>Anytime anywhere just few clicks away.</h3>
-                                        <p>Buy what you see.<see></see></p>
-                                    </span>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <div class="item">
-                            <a href="#">
-                                <figure>
-                                        <img src="{{ 'slider_3.jpeg' | asset_url }}" alt="The Soap Store"  alt="pic">
-                                    <span>
-                                        <h3>Online Clothing Store</h3>
-                                        <p>Buy what you see.<see></see></p>
-                                    </span>
-                                </figure>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
 
-            <!--Banner new products-->
+            <!--Banner Sidebar image-->
             <div class="col-4">
                 <div class="banner-new-product">
                     <a href="#">
                         <figure>
-                            <img src="{{ 'new_product.jpg' | asset_url }}" alt="pic">
+                            <img src="{{ section.settings.sidebar-img | img_url: 'master'}}" alt="pic">
                             <span>
-                            <h3>New products!</h3>
-                            <p>Hot and new<see></see></p>
+                            <h3>{{section.settings.side-text}}</h3>
+                            <p>{{section.settings.sub-text}}</p>
                         </span>
                         </figure>
                     </a>
@@ -61,6 +40,56 @@
         </div>
     </div>
 </section>
+
+{% schema %}
+ {
+    "blocks": [
+        {
+        "type": "image",
+        "name": "Slider Item",
+        "settings": [{
+                "type": "text",
+                "label": "Large Text",
+                "id": "lt-header"
+            },
+            {
+                "type": "text",
+                "id": "sm-text",
+                "label": "Sub Text"
+            },
+           {
+                   "type": "image_picker",
+                   "id": "image-picker",
+                   "label": "Pick an image"
+               }
+
+            ]
+    }
+ ],
+
+    "name": "Banner Sidebar ",
+    "settings": [
+
+        {
+            "type": "text",
+            "id": "side-text",
+            "label": "New Product Title",
+            "default": "Same o same"
+        },
+        {
+            "type": "text",
+            "id": "sub-text",
+            "label": "Sub Text"
+
+        },
+        {
+            "type": "image_picker",
+            "id": "sidebar-img",
+            "label": "Pick a image"
+        }
+    ]
+} 
+{% endschema %}
 
 <script >
     $('.banner-slider-content').owlCarousel({
@@ -84,3 +113,4 @@
         }
     })
 </script>
+

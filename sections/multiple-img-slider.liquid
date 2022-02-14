@@ -22,64 +22,47 @@
             <div class="col">
                 <div class="multi-img-slider">
                     <div class="owl-carousel owl-theme multi-img-slider-content">
+                    {%for block in section.blocks %} 
                         <div class="item">
                             <a href="#">
                                 <figure>
-                                    <img src="{{ 'kids.jpeg' | asset_url }}" alt="pic">
+                                    <img src="{{ block.settings.multiple-img | img_url: 'master'}}" alt="pic">
                                     <span>
-                                        <h3>Kids</h3>
+                                        <h3>{{block.settings.text-title}}</h3>
                                     </span>
                                 </figure>
                             </a>
                         </div>
-
-                        <div class="item">
-                            <a href="#">
-                                <figure>
-                                    <img src="{{ 'mens.jpeg' | asset_url}}" alt="pic">
-                                    <span>
-                                        <h3>Mens</h3>
-                                    </span>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <div class="item">
-                            <a href="#">
-                                <figure>
-                                    <img src="{{ 'women.jpeg' | asset_url }}" alt="pic">
-                                    <span>
-                                        <h3>Womens</h3>
-                                    </span>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#">
-                                <figure>
-                                    <img src="{{ 'gifts.jpeg' | asset_url }}" alt="pic">
-                                    <span>
-                                        <h3>Gifts</h3>
-                                    </span>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#">
-                                <figure>
-                                    <img src="{{ 'gifts.jpeg' | asset_url }}" alt="pic">
-                                    <span>
-                                        <h3>Home Appliances</h3>
-                                    </span>
-                                </figure>
-                            </a>
-                        </div>
+                    {%endfor%}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+    {
+        "blocks": [
+            {
+                "type": "image",
+                "name": "Slider Image",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "multiple-img",
+                        "label": "Pick an image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "text-title",
+                        "label": "Slider Img Title"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
 
 <script>
     $('.multi-img-slider-content').owlCarousel({
