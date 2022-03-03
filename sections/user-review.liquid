@@ -13,108 +13,62 @@
         <div class="row">
             <div class="col">
                 <div class="owl-carousel owl-theme review-slider">
+                 {%for block in section.blocks %} 
                     <div class="item">
                         <div class="review-content">
                             <div class="author-detail">
                                 <figure>
-                                    <img src="{{ 'testimonial_1.jpg' | asset_url}}" alt="pic">
+                                    <img src="{{block.settings.user-img | img_url: 'master' }}" alt="pic">
                                 </figure>
-                                <h2><span>Josh Dew</span></h2>
-                                <p>Designer</p>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
+                                <h2><span>{{block.settings.user-name}}</span></h2>
+                                <p>{{block.settings.user-position}}</p>
                             </div>
                             <div class="review-message">
-                                <p>Kalika wants to win and promote various infrastructure development projects through
-                                    partnership with domestic and international stake holders.</p>
+                                <p>{{block.settings.user-review}}</p>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
 
-                    <div class="item">
-                        <div class="review-content">
-                            <div class="author-detail">
-                                <figure>
-                                    <img src="{{ 'testimonial_2.jpg' | asset_url}}" alt="pic">
-                                </figure>
-                                <h2><span>Josh Dew</span></h2>
-                                <p>Designer</p>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="review-message">
-                                <p>Kalika wants to win and promote various infrastructure development projects through
-                                    partnership with domestic and international stake holders.</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="review-content">
-                            <div class="author-detail">
-                                <figure>
-                                    <img src="{{ 'testimonial_3.jpg' | asset_url}}" alt="pic">
-
-                                </figure>
-                                <h2><span>Josh Dew</span></h2>
-                                <p>Designer</p>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="review-message">
-                                <p>Kalika wants to win and promote various infrastructure development projects through
-                                    partnership with domestic and international stake holders.</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="review-content">
-                            <div class="author-detail">
-                                <figure>
-                                    <img src="{{ 'testimonial_4.jpg' | asset_url}}" alt="pic">
-
-                                </figure>
-                                <h2><span>Josh Dew</span></h2>
-                                <p>Designer</p>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="review-message">
-                                <p>Kalika wants to win and promote various infrastructure development projects through
-                                    partnership with domestic and international stake holders.</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
+                    {%endfor%}
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+    {
+        "blocks": [
+            {
+                "type": "image",
+                "name": "Review Item",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "user-img",
+                        "label": "Give Fontawesome Class"
+                    },
+                    {
+                        "type": "text",
+                        "id": "user-name",
+                        "label": "Full Name"
+                    },
+                    {
+                        "type": "text",
+                        "id": "user-position",
+                        "label": "Who are you?"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "user-review",
+                        "label": "Full Review"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
 
 <script>
     $('.review-slider').owlCarousel({

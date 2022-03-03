@@ -12,39 +12,49 @@
             <div class="col">
                 <div class="icon-text-content">
                     <ul>
+                     {%for block in section.blocks %} 
                         <li>
-                            <i class="fa fa-bus"></i>
-                            <h4>Free delivery</h4>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right.</p>
+                            <i class="fa {{ block.settings.icon-image }}"></i>
+                            <h4>{{block.settings.icon-header}}</h4>
+                            <p>{{block.settings.icon-text}}</p>
                         </li>
 
-                        <li>
-                            <i class="fa fa-shopping-bag"></i>
-                            <h4>Click & Order</h4>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right.</p>
-                        </li>
-
-                        <li>
-                            <i class="fa fa-shopping-basket"></i>
-                            <h4>Wide products</h4>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right.</p>
-                        </li>
-
-                        <li>
-                            <i class="fa fa-rocket"></i>
-                            <h4>fast & relaible</h4>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right.</p>
-                        </li>
+                    {%endfor%}
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+{% schema %}
+    {
+        "blocks": [
+            {
+                "type": "text",
+                "name": "Icon Text Block",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "icon-image",
+                        "label": "Give Fontawesome Class"
+                    },
+                    {
+                        "type": "text",
+                        "id": "icon-header",
+                        "label": "Header"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "icon-text",
+                        "label": "Description"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
 
 <script >
     $('.rating-slider').owlCarousel({
